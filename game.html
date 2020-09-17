@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type = "text/javascript">
+    function fn1(){
+        var num1 = document.getElementById("num1").value;
+        document.getElementById("firstnumber").innerHTML=num1; 
+        var num2 = document.getElementById("num2").value;
+        document.getElementById("secondnumber").innerHTML=num2; 
+        var num3 = document.getElementById("num3").value;
+        document.getElementById("thirdnumber").innerHTML=num3; 
+        var num4 = document.getElementById("num4").value;
+        document.getElementById("fourthnumber").innerHTML=num4;
+        if(num1==num2||num1==num3){
+            alert("Sorry, You can't select 2 same Tickets!");
+            exit();
+        } 
+        if(num2==num3||num2==num4){
+            alert("Sorry, You can't select 2 same Tickets!");
+            exit();
+        } 
+        if(num3==num4||num1==num4){
+            alert("Sorry, You can't select 2 same Tickets!");
+            exit();
+        } 
+        if(num1==0||num2==0)
+        {
+            alert("Fill all Tickets!");
+            exit();
+        }
+        if(num3==0||num4==0)
+        {
+            alert("fill all Tickets!");
+            exit();
+        }
+        confirm("Do you really want to select: "+num1+", "+num2+", "+num3+", "+num4);
+        prompt("After Submission, You can't change your ticket. If agree, then Type OK");
+        alert("Submitted Successfully!");
+
+        
+        document.getElementById("checkresult").innerHTML="Thankyou for Participating.<br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis nisi totam, dolorem, consequatur dolore deserunt voluptates libero eaque, temporibus odio vitae magnam maiores! Eligendi repudiandae, earum sunt possimus eos autem? Possimus, eaque!<br><br>Check Result Now<br><br><a href ='winner.html' class = 'btnwin' onclick = 'valuesender()' >Check Result</a>";
+        }
+        console.log(num1);
+        function valueSender()
+{
+        localStorage.setItem("myvalue",num1);
+        window.location.href="winner.html";
+}
+</script>
+<style>
+    
+    #welcome{
+        background-image: url("console.jpg");
+        background-size: cover;
+        background-image: image-set(fit);
+        height:950px;
+        width:100%;
+        padding-top:1px;
+       
+        
+}
+    
+    #welcome h1,#name,#welcome h5{
+        text-align:center;
+        padding-top:50px;
+        color:white;
+        font-size:70px;
+    }
+    #welcome h5{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size:30px;
+        color:white;
+
+    }
+    #name{
+        padding-top:0px;
+        font-size:80px;
+        font-weight: bold;
+        color:white;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: italic;
+    }
+    #ticketselect{
+        display:flex;
+        justify-content: center;
+        padding: 30px 30px;
+        font-size:40px;
+        color:purple;
+
+    }
+    h1{
+        text-align:center;
+    padding: 30px 30px;
+        
+    }
+    #ticketcounter{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    #getnum{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height:600px;
+        width:70%;
+        border: 2px solid purple;
+        text-align:center;
+        margin:auto;
+        background-image:url("rose.jpg");
+    }
+
+    #num1,#num2,#num3,#num4{
+        font-size:30px;
+        text-align:center;
+        color:red;
+        border-radius: 20px;
+        padding: 10px 10px;
+    }
+    .btnwin,.btn{
+        border-radius: 30px;
+        color:white;
+        background-color: black;
+        font-size:20px;
+        padding:8px 20px;
+    }
+
+    #checkresult{
+        padding-top:40px;
+        text-align: center;
+        font-size: 30px;
+        color:purple;
+        margin-bottom: 20px;
+    }
+    #checkresult a{
+        border:qpx solid white;
+        color:white;
+        background-color:black;
+        text-decoration: none;
+        border-radius: 25px;
+        padding: 10px 25px;
+        font-size:23px;
+        margin-bottom: 10px;
+    }
+    
+</style>
+<body>
+    
+    <section id = "welcome">
+    <h1>We Welcomes You </h1>
+    <p id = "name"></p>
+    <h5>We hope that you read all rules and regulations.<br>So,here Select the tickets and stand a chance to win upto Rs 1,00,000 cash prizes.</h5>
+</section>
+<section id = "ticketcounter">
+    <p id ="ticketselect">Select atleast 4 tickets</p>
+</section>
+
+<section id = "getnum">
+    <input id = "num1" type = "number" placeholder = "Enter 1st Ticket">
+    <br><br>
+    <input id = "num2" type = "number" placeholder = "Enter 2nd Ticket">
+    <br><br>
+    <input id = "num3" type = "number" placeholder = "Enter 3rd Ticket">
+    <br><br>
+    <input id = "num4" type = "number" placeholder = "Enter 4th Ticket">
+    <br><br>
+    <button class = "btn" onclick="fn1()">Submit</button>
+    <br><br><br>
+    There will be charged extra money if you buy more than 4 tickets.
+</section>
+<div id = "firstnumber"></div>
+<div id = "secondnumber"></div>
+<div id = "thirdnumber"></div>
+<div id = "fourthnumber"></div>
+<div id = "checkresult"> </div>
+</body>
+<script>
+    let name = prompt("enter name","name");
+    document.getElementById("name").innerHTML = name;
+    console.log(num1);
+</script>
+</html>

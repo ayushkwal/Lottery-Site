@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        setTimeout(() => {
+            document.getElementById("result").innerHTML="Result will be Announced under 5 seconds";
+            
+        }, 5000);
+
+        setTimeout(() => {
+            document.getElementById("lastthree").innerHTML="And The Lottery Ticket is...";
+            
+        }, 10000);
+        var n = (Math.floor(1 + (9*(Math.random()))))*10;
+        setTimeout(() => {
+            document.getElementById("luckydrawnumber").innerHTML=n;
+            
+        }, 13000);
+        
+        var b = localStorage.getItem("myvalue");
+            alert("your value is"+b);
+            var resetValue =0;
+localStorage.setItem("myValue", resetValue);
+
+    </script>
+</head>
+<style>
+    *{
+        background-image: url("tree.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .winheadline{
+        display:flex;
+        text-align: center;
+        justify-content: center;
+        font-size:60px;
+        padding-top:40px;
+        color:white;
+    }
+    #result,#lastthree{
+        padding-top:40px;
+        font-size:50px;
+        text-align: center;
+        color:white;
+    }
+    #lastthree{
+        color:red;
+    }
+
+    #luckydrawnumber{
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        font-size:100px;
+        color:red;
+        padding-top:100px;
+        background-color:black;
+        text-align:center;
+
+    }
+</style>
+<body>
+    <div class = "winheadline">
+        Fasten Your SeatBelt...
+    </div>
+    <div id = "result"></div>
+    <div id = "lastthree"></div>
+    <div id = "winnerpage"></div>
+    <div id = "luckydrawnumber"></div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "clock"></div>
+</body>
+<script>
+     for(var i = 0;i<5;i+=1){
+    setTimeout(() => {
+        time = new Date("2-2-32");
+        document.getElementById("clock").innerHTML=time+time+"  ";
+       }, 3000);
+    }
+    
+       
+</script>
+</html>

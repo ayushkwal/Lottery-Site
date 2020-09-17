@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        .navbar{
+           
+            
+        }
+
+        .nav_ul{
+            display:flex;
+            list-style: none;
+           
+        }
+        .nav_ul li{
+            margin:auto;
+            padding-top:10px;
+            
+            
+        }
+        .nav_ul li a{
+            
+            text-decoration: none;
+            color:white;
+            border:1px solid white;
+            background-color:black;
+            padding: 9px 10px;
+            border-radius: 20px;
+           
+
+            
+            
+        }
+        #bg{
+            display:flex;
+            width:100%;
+            position:absolute;
+            top: 0px;
+            height:600px;
+            background-color: aliceblue;
+            border:2px solid red;
+            z-index: -1;
+            justify-content: center;
+            filter:brightness(80%);
+            
+
+        }
+     
+        #bg img{
+            display:flex;
+            width:100%;
+            position:absolute;
+            top: 0px;
+            height:600px;
+            background-color: aliceblue;
+            background-image:url("card.jpg");
+            z-index: -1;
+        }
+        .tagline{
+            display: flex;
+            font-size:50px;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            overflow:hidden;
+            color:white;
+        }
+        #tagp{
+            font-size:20px;
+        }
+        
+        #sec2{
+            display:flex;
+            position: absolute;
+            top:600px;
+            background-image:url("rose.jpg");
+            height: 600px;
+            width:100%;
+            text-align:center;
+            z-index:5;
+        }
+        .choose{
+            display:flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content:center;
+            margin:0px auto;
+            padding-top: 60px;
+            color: white;
+            z-index:5;
+            font-size:40px;
+        }
+        #readygame{
+            font-size:20px;
+            color: white;
+        }
+        #clickbtn a{
+            display:inline;
+            border:1px solid white;
+            padding: 20px 30px;
+            border-radius: 40px;
+            color:white;
+            text-decoration: none;
+            transition: all 2s ease-in;
+        }
+        #clickbtn a:hover::after{
+            content: attr(data-hover);
+        }
+
+       
+</style>
+<body>
+    <nav class = "navbar">
+        <ul class = "nav_ul">
+            <li><a href = "#">Home</a></li>
+            <li><a href = "#">Rules</a></li>
+            <li><a href = "#">Other Games</a></li>
+            <li><a href = "#">About us</a></li>
+        </ul>
+    </nav>
+    
+    
+    <section id = "bg">
+        <img src = "card.jpg">
+       <div class = "tagline"><h2>Mega Jackpot</h2>
+        <p id = "tagp">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo ipsa harum consequatur, incidunt, corporis accusamus voluptas qu
+            idem adipisci corrupti eos eius, labore qui in cum maxime quibusdam laboriosam aliquam deleniti dolore totam.</p>      
+       </div>      
+    </section>
+    <section id = "sec2">
+        <div class = "choose">
+            <h4>Are You Ready to play game?</h4><br>
+            <p id = "readygame">
+                Lorem ipsum dolor sit amet consectetur adipisi
+                cing elit. Nisi delectus beatae voluptates veri Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque natus exercitationem odio temporibus vitae, perferendis fuga qui culpa labore nobis.
+                tatis odio architecto vero optio illum sunt quidem!
+            </p>
+            <p id = "clickbtn">
+                <a href = "game.html" data-hover="&#x2192;">Let's Play</a>
+            </p>
+            
+        </div>
+
+    </section>
+    
+</body>
+</html>
