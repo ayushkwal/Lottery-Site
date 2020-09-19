@@ -11,31 +11,43 @@
         var num2 = document.getElementById("num2").value;
         var num3 = document.getElementById("num3").value; 
         var num4 = document.getElementById("num4").value;
-
-        if(num1==num2||num1==num3){
-            alert("Sorry, You can't select 2 same Tickets!");
-            exit();
-        } 
-        if(num2==num3||num2==num4){
-            alert("Sorry, You can't select 2 same Tickets!");
-            exit();
-        } 
-        if(num3==num4||num1==num4){
-            alert("Sorry, You can't select 2 same Tickets!");
-            exit();
-        } 
+        console.log(num1+"is");
         if(num1==0||num2==0)
         {
+            console.log(num1);
             alert("Fill all Tickets!");
             exit();
         }
-        if(num3==0||num4==0)
+        else if(num3==0||num4==0)
         {
             alert("fill all Tickets!");
             exit();
         }
-        confirm("Do you really want to select: "+num1+", "+num2+", "+num3+", "+num4);
-        prompt("After Submission, You can't change your ticket. If agree, then Type OK");
+       
+       else if(num1==num2||num1==num3){
+            alert("Sorry, You can't select 2 same Tickets!");
+            exit();
+        } 
+        else if(num2==num3||num2==num4){
+            alert("Sorry, You can't select 2 same Tickets!");
+            exit();
+        } 
+       else if(num3==num4||num1==num4){
+            alert("Sorry, You can't select 2 same Tickets!");
+            exit();
+        } 
+        
+       
+       var con = confirm("Do you really want to select: "+num1+", "+num2+", "+num3+", "+num4);
+       if(con!=true)
+       {
+           exit();
+       }
+       var pro =  prompt("After Submission, You can't change your ticket. If agree, then Type OK");
+       if(pro==null)
+       {
+           exit();
+       }
         alert("Submitted Successfully!");
 
         
@@ -150,7 +162,7 @@
         padding-top:40px;
         text-align: center;
         font-size: 30px;
-        color:purple;
+        color:rgb(19, 1, 19);
         margin-bottom: 20px;
     }
     #checkresult a{
@@ -163,6 +175,31 @@
         font-size:23px;
         margin-bottom: 10px;
     }
+
+    @media only screen and (max-width:1000px)
+    {
+        #num1,#num2,#num3,#num4{
+            font-size:15px;
+        }
+        #name{
+            font-size:52px;
+            font-weight: lighter;
+        }
+
+        #welcome h1{
+            font-size:40px;
+        }
+        #welcome h5{
+            font-size:20px;
+        }
+        #welcome{
+            height:750px;
+        }
+        #getnum{
+            width:100%;
+        }
+
+    }
     
 </style>
 <body>
@@ -173,7 +210,7 @@
     <h5>We hope that you read all rules and regulations.<br>So,here Select the tickets and stand a chance to win upto Rs 1,00,000 cash prizes.</h5>
 </section>
 <section id = "ticketcounter">
-    <p id ="ticketselect">Select atleast 4 tickets</p>
+    <p id ="ticketselect">Select atleast 4 tickets </p>
 </section>
 
 <section id = "getnum">
@@ -196,7 +233,14 @@
 <div id = "checkresult"> </div>
 </body>
 <script>
-    let name = prompt("enter name","name");
+    let name = prompt("Enter your name","Name");
+    console.log(name);
+    
+    if(name==0||name==null)
+    {
+        alert("We Selected Your Name as: Anonymous");
+        name = 'Anonymous';
+    }
     document.getElementById("name").innerHTML = name;
     console.log(num1);
 </script>
