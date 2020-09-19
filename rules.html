@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #rules{
+        background-image: url("treedark.jpg");
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        height:200vh;
+        width:100%;
+    }
+    .rulehead{
+        font-size:75px;
+        display: flex;
+        align-items: center;
+        color: rgb(136, 40, 136);
+    }
+    .ul_li{
+        font-size:60px;
+        color:white;
+    }
+    .bestluck{
+        font-size:42px;
+        color:red;
+    }
+    .return a{
+        color:white;
+        text-decoration: none;
+        border:1px solid white;
+        border-radius: 20px;
+        padding: 10px 10px;
+    }
+
+    @media only screen and (max-width:1000px)
+    {
+        .rulehead
+        {
+        font-size:40px; 
+        }
+        .ul_li{
+        font-size:25px;
+    }
+    #rules{
+        height:100vh;
+    }
+
+    }
+</style>
+<body>
+    <section id = "rules">
+        <div class = "rulehead">
+            Rules Of The Game
+            
+        </div>
+        <hr>
+        <div class = "rulelist">
+            <ul>
+                <li class = "ul_li">One user may select only 4 tickets.</li>
+                <li class = "ul_li">Ticket should be multiple of 10 and from range 10 to 100 .</li>
+                <li class = "ul_li">You can't select 2 same tickets.</li>
+                <li class = "ul_li">This game is fully based on Luck.</li>
+                <li class = "ul_li">If you win, then you are asked to send screenshot to our mail.</li>
+                <li class = "ul_li">If you lose, then you can play again but it will be worthless.</li>
+                <li class = "ul_li">Any type of bluff may lead you to disqualified from game.</li>
+                <li class = "ul_li">It is assumed that you have read all terms and conditions till now.</li>
+            </ul>
+        </div>
+        <div class = "bestluck">
+            Best of Luck...<br><br>
+        </div>
+        <div class = "return">
+            <a href = "index.html">Return To Home Page</a>
+        </div>
+       
+    </section>
+</body>
+</html>

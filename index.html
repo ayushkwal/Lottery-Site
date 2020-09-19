@@ -7,13 +7,15 @@
 </head>
 <style>
         .navbar{
-           
+            
+        
             
         }
 
         .nav_ul{
             display:flex;
             list-style: none;
+            height:30px;
            
         }
         .nav_ul li{
@@ -29,11 +31,25 @@
             border:1px solid white;
             background-color:black;
             padding: 9px 10px;
-            border-radius: 20px;
-           
+            border-radius: 20px;        
+        }
+        .nav_ul li a:hover{
+            color:black;
+            background-color: white;
+            padding: 10px 30px;
+        }
+        #burger{
+            position:absolute;
+            right:5%;
+            top:30px;
+            display:none;
 
-            
-            
+        }
+        .lines{
+            height:2px;
+            width:22px;
+            margin:5px 3px;
+            background-color: white;
         }
         #bg{
             display:flex;
@@ -42,7 +58,6 @@
             top: 0px;
             height:600px;
             background-color: aliceblue;
-            border:2px solid red;
             z-index: -1;
             justify-content: center;
             filter:brightness(80%);
@@ -112,15 +127,69 @@
         }
 
        
+
+        @media only screen and (max-width:1000px)
+        {
+            .navbar{
+                height:170px;
+                transition: all 1s ease-in;
+            }
+            .nav_ul{
+                display:flex;
+                flex-direction:column;
+            }
+            .nav_ul li {
+                margin-top:15px;
+                border: none;
+            }
+            #burger{
+                display:block;
+            }
+
+            .heightforresponsive{
+            height:30px;
+        }
+        .visibilityforresponsive{
+            visibility: hidden;
+        }
+
+        .tagline{
+            font-size:20px;
+        }
+        .nav_ul li a{
+            
+            text-decoration: none;
+            color:white;
+            border:none;
+            background-color:transparent;
+            padding: 9px 10px;
+            border-radius: 0px;        
+        }
+
+        .choose{
+            font-size:30px;
+        }
+        #clickbtn a{
+            padding: 10px 10px;
+        }
+
+        }
+
+       
 </style>
 <body>
-    <nav class = "navbar">
-        <ul class = "nav_ul">
+    <nav class = "navbar heightforresponsive">
+        <ul class = "nav_ul visibilityforresponsive">
             <li><a href = "#">Home</a></li>
-            <li><a href = "#">Rules</a></li>
+            <li><a href = "rules.html">Rules</a></li>
             <li><a href = "#">Other Games</a></li>
             <li><a href = "#">About us</a></li>
         </ul>
+        <div id = "burger">
+            <div class = "lines"></div>
+            <div class = "lines"></div>
+            <div class = "lines"></div>
+        </div>
     </nav>
     
     
@@ -146,6 +215,16 @@
         </div>
 
     </section>
-    
 </body>
+<script>
+    burger = document.getElementById("burger");
+    navul = document.querySelector('.nav_ul');
+    navbar = document.querySelector('.navbar');
+
+   
+    burger.addEventListener("click",()=>{
+        navbar.classList.toggle('heightforresponsive');
+        navul.classList.toggle('visibilityforresponsive');
+    })
+</script>
 </html>

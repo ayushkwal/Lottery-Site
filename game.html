@@ -7,14 +7,11 @@
 </head>
 <script type = "text/javascript">
     function fn1(){
-        var num1 = document.getElementById("num1").value;
-        document.getElementById("firstnumber").innerHTML=num1; 
+        var num1 = document.getElementById("num1").value; 
         var num2 = document.getElementById("num2").value;
-        document.getElementById("secondnumber").innerHTML=num2; 
-        var num3 = document.getElementById("num3").value;
-        document.getElementById("thirdnumber").innerHTML=num3; 
+        var num3 = document.getElementById("num3").value; 
         var num4 = document.getElementById("num4").value;
-        document.getElementById("fourthnumber").innerHTML=num4;
+
         if(num1==num2||num1==num3){
             alert("Sorry, You can't select 2 same Tickets!");
             exit();
@@ -42,13 +39,20 @@
         alert("Submitted Successfully!");
 
         
+
+        
         document.getElementById("checkresult").innerHTML="Thankyou for Participating.<br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis nisi totam, dolorem, consequatur dolore deserunt voluptates libero eaque, temporibus odio vitae magnam maiores! Eligendi repudiandae, earum sunt possimus eos autem? Possimus, eaque!<br><br>Check Result Now<br><br><a href ='winner.html' class = 'btnwin' onclick = 'valuesender()' >Check Result</a>";
         }
-        console.log(num1);
-        function valueSender()
-{
-        localStorage.setItem("myvalue",num1);
-        window.location.href="winner.html";
+
+        function valueSender(){
+    const namea = document.getElementById("num1").value;
+    const nameb = document.getElementById("num2").value;
+    const namec = document.getElementById("num3").value;
+    const named = document.getElementById("num4").value;
+       sessionStorage.setItem("NUMA",namea);
+       sessionStorage.setItem("NUMB",nameb);
+       sessionStorage.setItem("NUMC",namec);
+       sessionStorage.setItem("NUMD",named);
 }
 </script>
 <style>
@@ -91,7 +95,7 @@
         display:flex;
         justify-content: center;
         padding: 30px 30px;
-        font-size:40px;
+        font-size:30px;
         color:purple;
 
     }
@@ -107,6 +111,7 @@
     }
     #getnum{
         display:flex;
+        color:white;
         align-items: center;
         justify-content: center;
         flex-direction: column;
@@ -124,6 +129,7 @@
         color:red;
         border-radius: 20px;
         padding: 10px 10px;
+        max-width:70%;
     }
     .btnwin,.btn{
         border-radius: 30px;
@@ -131,6 +137,13 @@
         background-color: black;
         font-size:20px;
         padding:8px 20px;
+    }
+    .btn{
+        background-color:transparent;
+        border:1px solid white;
+    }
+    .btn:hover::after{
+        content: attr(data-hover);
     }
 
     #checkresult{
@@ -172,7 +185,7 @@
     <br><br>
     <input id = "num4" type = "number" placeholder = "Enter 4th Ticket">
     <br><br>
-    <button class = "btn" onclick="fn1()">Submit</button>
+    <button class = "btn" onclick="fn1() ; valueSender() ;" data-hover="&#x2192;">Submit</button>
     <br><br><br>
     There will be charged extra money if you buy more than 4 tickets.
 </section>

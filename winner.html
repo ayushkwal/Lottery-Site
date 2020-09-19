@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        
+         window.addEventListener("load",()=> {
+            const namea = sessionStorage.getItem('NUMA');
+            const nameb = sessionStorage.getItem('NUMB');
+            const namec = sessionStorage.getItem('NUMC');
+            const named = sessionStorage.getItem('NUMD');
+            
+            
         setTimeout(() => {
             document.getElementById("result").innerHTML="Result will be Announced under 5 seconds";
             
@@ -20,11 +26,35 @@
             document.getElementById("luckydrawnumber").innerHTML=n;
             
         }, 13000);
+
         
-        var b = localStorage.getItem("myvalue");
-            alert("your value is"+b);
-            var resetValue =0;
-localStorage.setItem("myValue", resetValue);
+        setTimeout(() => {
+            console.log(namea);
+            console.log(nameb);
+        if(n==namea)
+        {
+            document.getElementById("winornot").innerHTML="Congratulations! You won";
+        }
+       else if(n==nameb)
+        {
+            document.getElementById("winornot").innerHTML="Congratulations! You won";
+        }
+       else if(n==namec)
+        {
+            document.getElementById("winornot").innerHTML="Congratulations! You won";
+        }
+        else if(n==namea)
+        {
+            document.getElementById("winornot").innerHTML="Congratulations! You won";
+        }
+        else
+        {
+            document.getElementById("winornot").innerHTML="Better Luck Next Time!";
+        }
+    }, 16000);
+
+})
+
 
     </script>
 </head>
@@ -63,6 +93,13 @@ localStorage.setItem("myValue", resetValue);
         text-align:center;
 
     }
+
+    #winornot{
+        color:white;
+        font-size: 60px;
+        text-align: center;
+
+    }
 </style>
 <body>
     <div class = "winheadline">
@@ -72,6 +109,7 @@ localStorage.setItem("myValue", resetValue);
     <div id = "lastthree"></div>
     <div id = "winnerpage"></div>
     <div id = "luckydrawnumber"></div>
+    <div id = "winornot"></div>
 
 </body>
 </html>
